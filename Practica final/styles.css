@@ -1,0 +1,377 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #121212;
+    font-weight: bold;
+}
+*:not(.ofrecemos, .pie-pagina, .grupo-1, .box) h2 {
+    font-size: 2rem;
+    color: #121212;
+    font-weight: bold;
+}
+
+body {
+    background: #f1f0f0;
+    padding: 0; 
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.724);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.217); /* Ligera sombra */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.titulo {
+    text-align: center;
+    color: black;
+}
+
+.logo img {
+    height: 140px;
+    width: auto;
+}
+
+.bars {
+    display: none;
+}
+
+.bars:hover {
+    background-color: yellow;
+}
+
+.nav-bar ul {
+    display: flex;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: black;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: 0.2s;
+    margin: 10px 10px;
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.nav-bar ul li a:hover {
+    color: #212127;
+    background-color: #2abd4d;
+}
+
+.nav-bar ul li a.active {
+    color: #212127;
+    background-color: #ffe00e;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 0px 30px;
+    }
+
+    .bars {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bars .line {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 6px 0px;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        transition: 0.5s;
+        overflow: hidden;
+        z-index: 10;
+    }
+
+    .nav-bar.active {
+        height: 450px;
+        margin-top: 0;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        margin-bottom: 7px;
+    }
+}
+
+/*Servicios*/
+.ofrecemos {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f1f0f0;
+}
+
+.ofrecemos h2 {
+    margin-bottom: 10px;
+}
+
+.linea-verde {
+    width: 100px;
+    height: 4px;
+    background-color: #036e1e;
+    margin: 0 auto 30px auto;
+}
+
+.bloque-servicios {
+    background-color: #8e9742;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px; /* Espaciado uniforme a los costados */
+    margin-bottom: -40px;
+}
+
+.bloque-servicios h3 {
+    background-color: white;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.contenedor-recuadros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 18.5px;
+}
+
+.recuadro {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    flex-basis: calc(20% - 15px);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recuadro i {
+    font-size: 5rem;
+    color: #036e1e;
+    margin-bottom: 10px;
+}
+
+.recuadro p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.recuadro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contenedor-recuadros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloque-servicios {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .recuadro {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Sección "Clientes" (aplicado a Exportación, Nuestro Producto y Certificaciones) */
+.secciones {
+    padding: 50px 20px;
+    background-color: #f1f0f0;
+}
+
+.secciones h2 {
+    text-align: center;
+    margin-top: 40px;  /* Aumenta el margen superior */
+    margin-bottom: 10px;  /* Aumenta el margen inferior */
+}
+.titulo-linea h2 {
+    margin-top: 80px;
+}
+
+/* Estilo para el contenido (imágenes y texto) */
+.contenido-secciones {
+    display: flex;
+    flex-direction: column-reverse; /* Para pantallas pequeñas, imagen abajo del texto */
+    align-items: center;
+    gap: 20px;
+}
+
+.texto-secciones {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #000000;
+    text-align: center;
+}
+
+/* Estilo para las imágenes */
+.imagen-secciones img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .contenido-secciones {
+        flex-direction: row-reverse; /* Imagen a la derecha en pantallas grandes */
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .texto-secciones {
+        flex: 1;
+        max-width: 50%;
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    .imagen-secciones {
+        max-width: 40%;
+    }
+
+    .imagen-secciones img {
+        max-width: 100%;
+    }
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logos img {
+    max-width: 100px;
+    height: auto;
+    margin: 10px;
+    flex: 1 0 21%;
+    box-sizing: border-box;
+}
+
+
+/* Pie de Página */
+.pie-pagina {
+    width: 100%;
+    background-color: #036e1e;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: aqua;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #8e9742;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
